@@ -15,8 +15,6 @@ Specform is a framework for defining, testing, and deploying prompts for large l
 - **Prompt Documentation** – Specs double as human-readable docs for teams
 - **Runtime Agnostic** – Integrates with any model or backend
 
-### Monorepo Structure
-
 ---
 
 ## Monorepo Structure
