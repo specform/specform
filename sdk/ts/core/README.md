@@ -43,7 +43,7 @@ const client = createClient({
 
 The instantiated client can be used to load compiled prompt specifications through the `usePrompt` method which returns a `Prompt` object.
 
-```tsypescript
+```typescript
 const prompt = await client.usePrompt('my-prompt');
 ```
 
