@@ -39,7 +39,7 @@ export class AssertionRegistry {
   }
 
   /**
-   * Method retreives an assertion function by name.
+   * Method retrieves an assertion function by name.
    *
    * @param name - the name of the assertion type
    *
