@@ -75,10 +75,7 @@ const client = createClient({
 const prompt = await client.usePrompt("my-prompt");
 const output = await llm.generate(prompt.render({ name: "Alice" }));
 
-prompt.assert(output, {
-  assertion: "equals",
-  expected: "Hello, Alice!",
-});
+prompt.assert("equals", output, "Hello, Alice!");
 ```
 
 The `assert` method validates the output against the expected value using the specified assertion type. If the assertion fails, an error is thrown with a detailed message.
