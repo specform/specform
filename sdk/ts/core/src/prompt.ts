@@ -17,7 +17,7 @@ import { AssertionRegistry } from "./assert";
 export class Prompt<TInputs extends Record<string, unknown>> {
   constructor(
     private compiledPrompt: CompiledPrompt<TInputs>,
-    private assertionRegisty: AssertionRegistry,
+    private assertionRegistry: AssertionRegistry,
     // Optional function to save the snapshot
     private saveSnapshot?: (snapshot: Snapshot<TInputs>) => void
   ) {}
@@ -43,7 +43,7 @@ export class Prompt<TInputs extends Record<string, unknown>> {
    * @returns An array of assertion results.
    */
   assertAll(output: string, context?: AssertionContext): AssertionResult[] {
-    return this.assertionRegisty.runAll(
+    return this.assertionRegistry.runAll(
       output,
       this.compiledPrompt.assertions ?? [],
       context
@@ -64,7 +64,7 @@ export class Prompt<TInputs extends Record<string, unknown>> {
     output: string,
     context?: AssertionContext
   ): AssertionResult {
-    return this.assertionRegisty.run(
+    return this.assertionRegistry.run(
       name,
       this.compiledPrompt.assertions?.find((a) => a.type === name)?.value ?? "",
       output,
