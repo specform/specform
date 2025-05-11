@@ -17,8 +17,8 @@ const MOCK_SNAPSHOT: Snapshot = {
   hash: "abc123",
   promptId: "test-id",
   promptHash: "abc123",
-  output: "Hi Brad",
-  inputs: { name: "Brad" },
+  output: "Hi Willie Nelson",
+  inputs: { name: "Willie Nelson" },
   assertions: [],
   createdAt: new Date().toISOString(),
   passed: true,
@@ -39,8 +39,8 @@ describe("Prompt", () => {
 
   it("should render the prompt with inputs", () => {
     const prompt = new Prompt(MOCK_PROMPT, assertionRegistry);
-    const output = prompt.render({ name: "Brad" });
-    expect(output).toBe("Hi Brad");
+    const output = prompt.render({ name: "Willie Nelson" });
+    expect(output).toBe("Hi Willie Nelson");
   });
 
   it("should render the prompt with default inputs", () => {
@@ -54,9 +54,9 @@ describe("Prompt", () => {
 
   it("should assert all assertions when assertAll is called", () => {
     const prompt = new Prompt(MOCK_PROMPT, assertionRegistry);
-    prompt.assertAll("Hi Brad");
+    prompt.assertAll("Hi Willie Nelson");
     expect(assertionRegistry.runAll).toHaveBeenCalledWith(
-      "Hi Brad",
+      "Hi Willie Nelson",
       [],
       undefined
     );
@@ -66,8 +66,8 @@ describe("Prompt", () => {
     const prompt = new Prompt(MOCK_PROMPT, assertionRegistry);
 
     const snapshot = prompt.snapshot({
-      output: "Hi Brad",
-      inputs: { name: "Brad" },
+      output: "Hi Willie Nelson",
+      inputs: { name: "Willie Nelson" },
       similarity: { test: 0.9 },
       save: true,
     });
@@ -76,8 +76,8 @@ describe("Prompt", () => {
     expect(snapshot.hash).toBe("abc123");
     expect(snapshot.promptId).toBe("test-id");
     expect(snapshot.promptHash).toBe("abc123");
-    expect(snapshot.output).toBe("Hi Brad");
-    expect(snapshot.inputs).toEqual({ name: "Brad" });
+    expect(snapshot.output).toBe("Hi Willie Nelson");
+    expect(snapshot.inputs).toEqual({ name: "Willie Nelson" });
     expect(snapshot.assertions).toEqual([]);
     expect(snapshot.createdAt).toBeDefined();
     expect(snapshot.similarity).toEqual({ test: 0.9 });
@@ -89,8 +89,8 @@ describe("Prompt", () => {
     const prompt = new Prompt(MOCK_PROMPT, assertionRegistry, saveSnapshot);
 
     prompt.snapshot({
-      output: "Hi Brad",
-      inputs: { name: "Brad" },
+      output: "Hi Willie Nelson",
+      inputs: { name: "Willie Nelson" },
       similarity: { test: 0.9 },
       save: true,
     });
