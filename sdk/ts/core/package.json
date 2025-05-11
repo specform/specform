@@ -1,0 +1,26 @@
+{
+  "name": "@specform/core",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "author": "Brad Walker",
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/mustache": "^4.2.5"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "vitest run"
+  },
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ]
+}

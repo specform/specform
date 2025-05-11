@@ -1,0 +1,28 @@
+{
+  "name": "specform",
+  "version": "0.1.0",
+  "description": "The core library for SpecForm, a tool for generating and validating Prompts for LLMs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build"
+  },
+  "workspace": [
+    "sdks/ts/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/specform/specform.git"
+  },
+  "keywords": [],
+  "author": "Brad Walker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/specform/specform/issues"
+  },
+  "homepage": "https://github.com/specform/specform#readme",
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  }
+}
