@@ -84,7 +84,7 @@ export type PromptClient<
  * @param options - Options for the client
  * @param options.noCache - If true, will not cache prompts
  *
- * @returns {PromptClient}
+ * @returns A new PromptClient instance
  */
 export function createPromptClient<TInputs extends Record<string, unknown>>({
   loadPrompt,
@@ -204,10 +204,3 @@ export function createPromptClient<TInputs extends Record<string, unknown>>({
     clearCaches: () => clearCaches(),
   };
 }
-
-const client = createPromptClient({
-  // @ts-ignore
-  loadPrompt: async (id) => {},
-  // @ts-ignore
-  loadSnapshot: async (id) => {},
-});
