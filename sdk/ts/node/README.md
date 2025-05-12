@@ -13,5 +13,5 @@ npm install @specform/node
 ```javascript
 import { client } from "@specform/node";
 
-const { usePrompt, fromSpec } = client;
+const { usePrompt, fromSnapshot } = client;
 ```
