@@ -11,7 +11,7 @@ npm install @specform/web
 ## Usage
 
 ```typescript
-import { createWebClient } from "@specform/node";
+import { createWebClient } from "@specform/web";
 
 const { usePrompt, fromSnapshot } = createWebClient({
   baseUrl: "https://example.com/specform",
