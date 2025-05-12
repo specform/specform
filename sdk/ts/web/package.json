@@ -1,0 +1,22 @@
+{
+  "name": "@promptspec/web",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@promptspec/core": "workspace:*"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc -p ."
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}
