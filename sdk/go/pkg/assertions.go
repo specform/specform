@@ -151,9 +151,15 @@ func initDefaultRegistry() *AssertionRegistry {
 	return r
 }
 
-/**
- * Public API to run assertions
- */
+// RunAssertions executes a list of assertions against the provided output string.
+// 
+// Parameters:
+//   - output: The string output to validate against the assertions.
+//   - assertions: A slice of Assertion objects defining the checks to perform.
+//   - ctx: An optional AssertionContext providing additional context for the assertions.
+//
+// Returns:
+//   A slice of AssertionResult objects, each representing the result of an assertion.
 func RunAssertions(output string, assertions []types.Assertion, ctx *types.AssertionContext) []types.AssertionResult {
 	return defaultRegistry.RunAll(output, assertions, ctx)
 }
