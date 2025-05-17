@@ -97,7 +97,7 @@ func NewSnapshotCommand() *cobra.Command {
 	cmd.Flags().StringVar(&outputPath, "output", "", "Path to LLM output.txt")
 	cmd.Flags().StringVar(&snapshotDir, "out", "snapshots", "Directory to save snapshots")
 	cmd.Flags().StringVar(&similarityPath, "similarity", "", "Optional similarity score JSON file")
-	cmd.Flags().BoolP("verbose", "v", false, "Enable verbose output")
+	cmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose output")
 
 	_ = cmd.MarkFlagRequired("prompt")
 	_ = cmd.MarkFlagRequired("output")
