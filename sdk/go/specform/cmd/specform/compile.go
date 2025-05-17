@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/specform/specform/sdk/go/internal"
+	"github.com/specform/specform/sdk/go/specform/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +22,7 @@ func NewCompileCommand() *cobra.Command {
 		Short: "Compile .spec.md files into .prompt.json files",
 		Args:  cobra.MinimumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			logger := internal.NewLogger(verbose)
+			logger := NewLogger(verbose)
 
 			logger.Debug("Compiling prompt spec files", "outputDir", outputDir, "watch", watchFlag)
 

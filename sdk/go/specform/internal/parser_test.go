@@ -7,7 +7,7 @@ import (
 )
 
 func TestParserSpecFile(t *testing.T) {
-	spec, err := ParseSpecFile("../examples/prompts/summarize-min.spec.md")
+	spec, err := ParseSpecFile("../../../examples/summarize-min.spec.md")
 	require.NoError(t, err)
 	require.NotNil(t, spec)
 

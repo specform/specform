@@ -5,9 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/specform/specform/sdk/go/internal"
-	specform "github.com/specform/specform/sdk/go/pkg"
-	"github.com/specform/specform/sdk/go/types"
+	specform "github.com/specform/specform/sdk/go/specform/pkg"
+	"github.com/specform/specform/sdk/go/specform/types"
 	"github.com/spf13/cobra"
 )
 
@@ -24,7 +23,7 @@ func NewSnapshotCommand() *cobra.Command {
 		Use:   "snapshot",
 		Short: "Assert and save snapshot of prompt execution",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			logger := internal.NewLogger(verbose)
+			logger := NewLogger(verbose)
 
 			logger.Info("Creating snapshot", "promptPath", promptPath, "inputsPath", inputsPath, "outputPath", outputPath, "snapshotDir", snapshotDir)
 			compiled, err := loadCompiledPrompt(promptPath)

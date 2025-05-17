@@ -9,7 +9,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/specform/specform/sdk/go/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +21,7 @@ func NewServeCommand() *cobra.Command {
 		Use:   "serve",
 		Short: "Serve compiled prompt specs and snapshots over HTTP",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			logger := internal.NewLogger(verbose)
+			logger := NewLogger(verbose)
 			logger.Info("Starting specform server", "dir", outputDir, "port", port)
 
 			withCORS := func(h http.HandlerFunc) http.HandlerFunc {

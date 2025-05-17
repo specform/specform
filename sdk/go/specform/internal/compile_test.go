@@ -11,7 +11,7 @@ import (
 func TestCompileSpecFile_WritesOutput(t *testing.T) {
 	tempDir := t.TempDir()
 
-	outputPath, err := CompileSpecFile("../examples/prompts/summarize-min.spec.md", tempDir)
+	outputPath, err := CompileSpecFile("../../../examples/summarize-min.spec.md", tempDir)
 	require.NoError(t, err)
 	require.FileExists(t, outputPath)
 

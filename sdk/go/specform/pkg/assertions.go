@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/specform/specform/sdk/go/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 )
 
 type AssertionFn func(value string, output string, ctx *types.AssertionContext) types.AssertionResult
@@ -110,9 +110,7 @@ func initDefaultRegistry() *AssertionRegistry {
 	// matches
 	r.Register("matches", func(value, output string, _ *types.AssertionContext) types.AssertionResult {
 
-		normalizedValue := normalizeText(value)
-		normalizedOutput := normalizeText(output)
-		pattern, flags := parseRegex(normalizedValue)
+		pattern, flags := parseRegex(value)
 
 		var re *regexp.Regexp
 		var err error
@@ -126,7 +124,7 @@ func initDefaultRegistry() *AssertionRegistry {
 			return types.AssertionResult{Type: "matches", Value: value, Passed: false, Message: fmt.Sprintf("✘ Invalid regex: %s", err)}
 		}
 
-		passed := re.MatchString(normalizedOutput)
+		passed := re.MatchString(output)
 		msg := passFailMsg(passed, "Output matches regex %s", "Output does not match regex %s", value)
 		return types.AssertionResult{Type: "matches", Value: value, Passed: passed, Message: msg}
 	})
@@ -152,14 +150,15 @@ func initDefaultRegistry() *AssertionRegistry {
 }
 
 // RunAssertions executes a list of assertions against the provided output string.
-// 
+//
 // Parameters:
 //   - output: The string output to validate against the assertions.
 //   - assertions: A slice of Assertion objects defining the checks to perform.
 //   - ctx: An optional AssertionContext providing additional context for the assertions.
 //
 // Returns:
-//   A slice of AssertionResult objects, each representing the result of an assertion.
+//
+//	A slice of AssertionResult objects, each representing the result of an assertion.
 func RunAssertions(output string, assertions []types.Assertion, ctx *types.AssertionContext) []types.AssertionResult {
 	return defaultRegistry.RunAll(output, assertions, ctx)
 }

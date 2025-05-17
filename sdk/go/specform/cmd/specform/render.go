@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	specform "github.com/specform/specform/sdk/go/pkg"
-	"github.com/specform/specform/sdk/go/types"
+	specform "github.com/specform/specform/sdk/go/specform/pkg"
+	"github.com/specform/specform/sdk/go/specform/types"
 	"github.com/spf13/cobra"
 )
 
@@ -19,7 +19,7 @@ func NewRenderCommand() *cobra.Command {
 		Use:   "render",
 		Short: "Render a prompt using a compiled prompt spec and inputs",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			scenario, err := loadCompiledPrompt(promptPath)
+			prompt, err := loadCompiledPrompt(promptPath)
 			if err != nil {
 				return fmt.Errorf("failed to load prompt: %w", err)
 			}
@@ -29,7 +29,7 @@ func NewRenderCommand() *cobra.Command {
 				return fmt.Errorf("failed to load inputs: %w", err)
 			}
 
-			rendered, err := specform.RenderPrompt(scenario, inputs, &specform.RenderOptions{Strict: true})
+			rendered, err := specform.RenderPrompt(prompt, inputs, &specform.RenderOptions{Strict: true})
 			if err != nil {
 				return fmt.Errorf("failed to render: %w", err)
 			}
