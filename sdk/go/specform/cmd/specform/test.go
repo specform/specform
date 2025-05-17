@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	specform "github.com/specform/specform/sdk/go/pkg"
-	"github.com/specform/specform/sdk/go/types"
+	specform "github.com/specform/specform/sdk/go/specform/pkg"
+	"github.com/specform/specform/sdk/go/specform/types"
 	"github.com/spf13/cobra"
 )
 
