@@ -2,8 +2,8 @@ import {
   createPromptClient,
   PromptLoader,
   SnapshotLoader,
-} from "@promptspec/core";
-import type { CompiledPrompt, Snapshot } from "@promptspec/core";
+} from "@specform/core";
+import type { CompiledPrompt, Snapshot } from "@specform/core";
 
 interface FetchOptions {
   signal?: AbortSignal;

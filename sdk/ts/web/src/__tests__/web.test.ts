@@ -1,7 +1,7 @@
 // packages/web/__tests__/web.test.ts
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { fetchPromptLoader, fetchSnapshotLoader } from "../web";
-import { createPromptClient } from "@promptspec/core";
+import { createPromptClient } from "@specform/core";
 
 const prompt = {
   id: "sample",

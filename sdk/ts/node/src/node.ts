@@ -17,9 +17,9 @@ async function safeReadJson<T>(filePath: string) {
     return JSON.parse(raw) as T;
   } catch (err: any) {
     if (err.code === "ENOENT") {
-      console.warn(`[promptspec:node] File not found: ${filePath}`);
+      console.warn(`[specform:node] File not found: ${filePath}`);
     } else {
-      console.error(`[promptspec:node] Failed to read JSON: ${filePath}`, err);
+      console.error(`[specform:node] Failed to read JSON: ${filePath}`, err);
     }
     throw err;
   }
