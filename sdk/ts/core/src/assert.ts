@@ -1,4 +1,4 @@
-import { Assertion, AssertionContext, AssertionResult } from "./types";
+import { Assertion, AssertionContext } from "./types";
 
 export type AssertionReturn<T extends Assertion["type"]> = {
   type: T;

@@ -1,83 +1,62 @@
-# Specform Core Typescript SDK
+# @specform/core
 
-## Overview
+The core SDK for Specform — a framework for defining, testing, and managing prompts for large language models (LLMs) using markdown-based specs.
 
-`@specform/core` is the core SDK for Specform, a framework for defining, testing, and managing prompts for large language models (LLMs) as flat markdown files. This SDK provides the core functionality for creating and managing prompt specifications, assertions, and other related features.
+This package provides the runtime-agnostic logic for:
 
-Use this library to build your own custom SDKs clients. If you are looking for a runtime-specific SDK, check out the `@specform/node`, `@specform/bun`, or `@specform/web` packages, which provide file-system and fetch adapters, respectively.
+- Prompt loading and rendering
+- Assertions and validation
+- Snapshot evaluation
+- Custom assertion registration
 
-For more details around authoring prompts, see the [Specform documentation](https://github.com/specform/specform).
+Use this package as the foundation for building your own SDKs or prompt runners.
+
+---
 
 ## Installation
 
-To install the Specform core SDK, run the following command:
-
 ```bash
-npm add @specform/core
+npm install @specform/core
 ```
+
+---
 
 ## Usage
 
-Core SDK provides a set of classes and functions for working with prompt specifications, assertions, and other related features. The main entry point is the `createClient` factory function, which creates a new instance of the Specform client.
-
-```typescript
+```ts
 import { createClient } from "@specform/core";
 
 const client = createClient({
-  loadPrompt: async (promptName) => {
-    // Load the prompt specification from a file or other source
-    const promptSpec = await loadPromptFromFile(promptName);
-    return promptSpec;
-  },
-  loadSnapshot: async (snapshotName) => {
-    // Load the snapshot from a file or other source
-    const snapshot = await loadSnapshotFromFile(snapshotName);
-    return snapshot;
-  },
-});
-```
-
-The instantiated client can be used to load compiled prompt specifications through the `usePrompt` method which returns a `Prompt` object.
-
-```typescript
-const prompt = await client.usePrompt("my-prompt");
-```
-
-The `Prompt` object provides methods for rendering a prompt and validating the output using assertions. For example:
-
-```typescript
-prompt.render({ name: "Alice" });
-```
-
-The `render` method returns a string a string with interpolated values inserted. This fully formatted string can be passed to an LLM for evaluation.
-
-```typescript
-const output = await llm.generate(prompt.render({ name: "Alice" }));
-```
-
-The output can then be validated using assertions. The core SDK provides a set of built-in assertions, including `equals`, `regex`, and `similarity`. You can also create custom assertions by implementing the `Assertion` interface.
-
-```typescript
-import { createClient } from "@specform/core";
-
-const client = createClient({
-  loadPrompt: async (promptName) => {
-    // Load the prompt specification from a file or other source
-    const promptSpec = await loadPromptFromFile(promptName);
-    return promptSpec;
-  },
+  loadPrompt: async (name) => loadPromptFromFile(name),
+  loadSnapshot: async (name) => loadSnapshotFromFile(name),
 });
 
-const prompt = await client.usePrompt("my-prompt");
+const prompt = await client.usePrompt("greeting");
 const output = await llm.generate(prompt.render({ name: "Alice" }));
-
 prompt.assert("equals", output, "Hello, Alice!");
 ```
 
-The `assert` method validates the output against the expected value using the specified assertion type. If the assertion fails, an error is thrown with a detailed message.
+---
 
-The core SDK also provides a set of built-in assertions, including `equals`, `regex`, and `similarity`. You can also create custom assertions by implementing the `Assertion` interface.
+## Custom Assertions
 
-## API Reference
+```ts
+client.registerAssertion("starts-with", (expected, actual) => {
+  const passed = actual.startsWith(expected);
+  return {
+    type: "starts-with",
+    value: expected,
+    passed,
+    message: passed
+      ? "✔ Starts with expected value"
+      : "✘ Did not start with expected value",
+  };
+});
+```
 
-@TODO: Add API reference documentation
+---
+
+## See Also
+
+- [`@specform/node`](../node) – Node.js file system adapter
+- [`@specform/web`](../web) – Browser/Edge fetch adapter
