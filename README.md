@@ -118,7 +118,7 @@ pnpm build
 
 ### Core SDK (`@specform/core`)
 
-The core TypeScript SDK provides the fundamental building blocks for working with prompts, assertions, and snapshots. Use this packaage to build custom clients for any js/ts runtime.
+The core TypeScript SDK provides the fundamental building blocks for working with prompts, assertions, and snapshots. Use this package to build custom clients for any js/ts runtime.
 
 #### Install
 
