@@ -101,7 +101,7 @@ Serves:
 ### Compile
 
 ```go
-prompt, err := specform.CompileFromPath("examples/hello.spec.md", nil)
+prompt, err := specform.CompileSpecFiles("examples/hello.spec.md", nil)
 ```
 
 ### Render
