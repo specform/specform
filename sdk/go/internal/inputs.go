@@ -80,7 +80,7 @@ func ParseInputBlock(content string) ([]string, map[string]string, error) {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return nil, nil, fmt.Errorf("error reding input block: %w", err)
+		return nil, nil, fmt.Errorf("error reading input block: %w", err)
 	}
 
 	if inMultiline {
