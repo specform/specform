@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "description": "The core library for SpecForm, a tool for generating and validating Prompts for LLMs.",
   "main": "index.js",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "scripts": {
     "test": "pnpm -r run test",
     "build": "pnpm -r run build"
@@ -16,7 +22,6 @@
   },
   "keywords": [],
   "author": "Brad Walker",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/specform/specform/issues"
   },

@@ -231,5 +231,4 @@ See the [Go SDK README](./sdk/go/README.md) for full usage.
 
 ## License
 
-MIT License
-Copyright (c) 2025 Brad Walker
+© 2025 Brad Walker. Licensed under the Apache License, Version 2.0, see [LICENSE](./LICENSE) for details.

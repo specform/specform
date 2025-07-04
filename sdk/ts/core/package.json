@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "author": "Brad Walker",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "mustache": "^4.2.0"
   },
