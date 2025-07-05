@@ -7,7 +7,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/specform/specform/types"
+	"github.com/specform/sdk/specform/types"
 )
 
 type RenderOptions struct {

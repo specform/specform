@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/specform/specform/internal"
+	"github.com/specform/sdk/specform/internal"
 	"github.com/spf13/cobra"
 )
 

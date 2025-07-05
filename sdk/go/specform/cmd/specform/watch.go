@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/specform/specform/internal"
+	"github.com/specform/sdk/specform/internal"
 )
 
 func WatchFiles(files []string, outputDir string) error {

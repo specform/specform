@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	specform "github.com/specform/specform/pkg"
-	"github.com/specform/specform/types"
+	specform "github.com/specform/sdk/specform/pkg"
+	"github.com/specform/sdk/specform/types"
 	"github.com/spf13/cobra"
 )
 
