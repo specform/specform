@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/specform/specform/sdk/go/specform/types"
+	"github.com/specform/specform/types"
 	"github.com/stretchr/testify/require"
 )
 

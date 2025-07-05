@@ -23,7 +23,7 @@ This package includes both:
 ## 📦 Install (CLI)
 
 ```bash
-go install github.com/specform/specform/sdk/go/cmd/specform@latest
+go install github.com/specform/specform/specform@latest
 ```
 
 Or build from source:
