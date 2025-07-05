@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/specform/sdk/specform/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 	"github.com/stretchr/testify/require"
 )
 

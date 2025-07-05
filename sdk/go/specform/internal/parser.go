@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/adrg/frontmatter"
-	"github.com/specform/sdk/specform/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/text"

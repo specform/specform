@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/specform/sdk/specform/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 )
 
 func SaveSnapshot(

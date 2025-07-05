@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/specform/sdk/specform/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 )
 
 func ParseAssertionsBlock(content string) ([]types.Assertion, error) {

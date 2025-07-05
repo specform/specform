@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/specform/sdk/specform/types"
+	"github.com/specform/specform/sdk/go/specform/types"
 )
 
 type AssertionFn func(value string, output string, ctx *types.AssertionContext) types.AssertionResult

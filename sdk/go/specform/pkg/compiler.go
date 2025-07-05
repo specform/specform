@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/specform/sdk/specform/internal"
+	"github.com/specform/specform/sdk/go/specform/internal"
 )
 
 type CompileOptions struct {
