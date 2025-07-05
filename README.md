@@ -1,3 +1,11 @@
+> ⚠️ **SDK NOTICE:**  
+> The TypeScript and Go SDKs have been moved to their own repositories:
+>
+> - 🟦 TypeScript: [github.com/specform/ts-sdk](https://github.com/specform/ts-sdk)
+> - 🟨 Go: [github.com/specform/go-sdk](https://github.com/specform/go-sdk)
+>
+> This monorepo no longer maintains active SDK development. Please update your dependencies accordingly.
+
 # Specform
 
 This is the monorepo for `Specform`, a language-agnostic prompt specification framework for testing, evaluating, and deploying LLM prompts.

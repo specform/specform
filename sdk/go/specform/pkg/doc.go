@@ -1,3 +1,5 @@
+// Deprecated: This SDK has moved to github.com/specform/go-sdk.
+
 // Package specform provides tools for compiling, rendering, and asserting prompts.
 //
 // This SDK is the Go implementation of the specform prompt framework. It allows you to:

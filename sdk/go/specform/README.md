@@ -1,3 +1,9 @@
+> ⚠️ **DEPRECATED: This Go SDK has moved to a dedicated repo**  
+>
+> ➡️ [github.com/specform/go-sdk](https://github.com/specform/go-sdk)  
+>
+> This package is no longer maintained in this monorepo. Please update your imports and dependencies to point to the new module path.
+
 # Specform (Go SDK + CLI)
 
 **`specform`** is a prompt specification framework that supports prompt compilation, rendering, assertions, and snapshot testing.
